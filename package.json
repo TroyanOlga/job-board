@@ -1,0 +1,42 @@
+{
+  "name": "job-board",
+  "version": "1.0.0",
+  "description": "job board with Koajs",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env-cmd -f .env.local tsx watch ./src/index.ts",
+    "migrations:create-apply": "env-cmd -f .env.local drizzle-kit push",
+    "migrations:create": "drizzle-kit generate",
+    "migrations:apply": "drizzle-kit migrate",
+    "seed": "env-cmd -f .env.local tsx ./src/seeds/users.ts"
+  },
+  "author": "Hájer-Troyan Olga",
+  "license": "ISC",
+  "dependencies": {
+    "@types/koa": "^2.15.0",
+    "@types/koa-router": "^7.4.8",
+    "drizzle-orm": "^0.36.4",
+    "env-cmd": "^10.1.0",
+    "joi": "^17.13.3",
+    "koa": "^2.15.3",
+    "koa-bodyparser": "^4.4.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^13.0.1",
+    "pg": "^8.13.1",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@stylistic/eslint-plugin-js": "^2.11.0",
+    "@types/node": "^22.9.3",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.28.1",
+    "eslint": "^9.15.0",
+    "globals": "^15.12.0",
+    "tsx": "^4.19.2",
+    "typescript-eslint": "^8.15.0"
+  }
+}
