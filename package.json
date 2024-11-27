@@ -6,11 +6,13 @@
   "scripts": {
     "tsc": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
     "dev": "env-cmd -f .env.local tsx watch ./src/index.ts",
     "migrations:create-apply": "env-cmd -f .env.local drizzle-kit push",
-    "migrations:create": "drizzle-kit generate",
-    "migrations:apply": "drizzle-kit migrate",
-    "seed": "env-cmd -f .env.local tsx ./src/seeds/users.ts"
+    "migrations:create": "env-cmd -f .env.local drizzle-kit generate",
+    "migrations:apply": "env-cmd -f .env.local drizzle-kit migrate",
+    "seed": "env-cmd -f .env.local tsx ./src/db/seed.ts",
+    "reset:db": "env-cmd -f .env.local tsx ./src/db/reset.ts"
   },
   "author": "Hájer-Troyan Olga",
   "license": "ISC",

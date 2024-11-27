@@ -32,6 +32,7 @@ export default [
       quotes: ['error', 'single'],
       'object-curly-spacing': ['error', 'always'],
       '@stylistic/js/indent': ['error', 2],
+      'no-duplicate-imports': 'error'
     }
   }
 ];

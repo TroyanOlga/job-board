@@ -2,7 +2,7 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import logger from 'koa-logger';
 import json from 'koa-json';
-import { db } from './db';
+import { db } from './db/connection';
 import { usersTable } from './db/schema';
 
 const app = new Koa();
