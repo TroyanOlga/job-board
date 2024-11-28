@@ -12,13 +12,15 @@
     "migrations:create": "env-cmd -f .env.local drizzle-kit generate",
     "migrations:apply": "env-cmd -f .env.local drizzle-kit migrate",
     "seed": "env-cmd -f .env.local tsx ./src/db/seed.ts",
-    "reset:db": "env-cmd -f .env.local tsx ./src/db/reset.ts"
+    "clear:db": "env-cmd -f .env.local tsx ./src/db/reset.ts",
+    "reset:db": "npm run clear:db && npm run migrations:create-apply && npm run seed"
   },
   "author": "Hájer-Troyan Olga",
   "license": "ISC",
   "dependencies": {
     "@types/koa": "^2.15.0",
     "@types/koa-router": "^7.4.8",
+    "argon2": "^0.41.1",
     "drizzle-orm": "^0.36.4",
     "env-cmd": "^10.1.0",
     "joi": "^17.13.3",
